@@ -24,7 +24,7 @@ public class BirdBase : MonoBehaviour
 
     public void OnJump()
     {
-        //zero out the velocity so that its more cartoony (feel free to fuck with this)
+        //zero out the velocity so that its more cartoony 
         rigidBody.linearVelocityY = 0;
         
         rigidBody.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
