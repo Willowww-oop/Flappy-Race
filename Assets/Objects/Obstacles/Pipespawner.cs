@@ -4,11 +4,15 @@ using UnityEditor;
 using UnityEngine;
 using Timer = System.Timers.Timer;
 
+
 public class Pipespawner : MonoBehaviour
 {
     public PipeSpawnerSO pipeSpawnerSO;
+    //could make these just be wrappers for the SO but ughhhhhhhhhhhhhhh
     float SpawnSpeed = 1;
     GameObject Pipes;
+    System.Random random = new System.Random();
+    float deviation;
 
     float spawntime;
     
@@ -19,6 +23,7 @@ public class Pipespawner : MonoBehaviour
         
         //
         Pipes = pipeSpawnerSO.prefab;
+        deviation = pipeSpawnerSO.deviation;
     }
 
     // Update is called once per frame
@@ -33,7 +38,10 @@ public class Pipespawner : MonoBehaviour
 
     void SpawnElapsed()
     {
-        Instantiate(pipeSpawnerSO.prefab, transform.position, transform.rotation);
+        float offset = ((Random.value * 2) -1) * SpawnSpeed;
+        var pos = transform.position;
+        pos.y += offset;
+        Instantiate(pipeSpawnerSO.prefab, pos, transform.rotation);
         Debug.Log("Spawned Pipes");
     }
 }
