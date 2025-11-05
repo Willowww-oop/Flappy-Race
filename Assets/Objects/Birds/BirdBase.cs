@@ -1,17 +1,27 @@
 using System;
+using System.Collections.Generic;
 using HelperScripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class BirdBase : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //this name doesnt really make sense anymore but whatever
     public BirdStats stats;
     float jumpStrength;
     PlayerInput playerInput;
     Rigidbody2D rigidBody;
     GameObject global;
     private int _score = 0;
+    GameObject spriteObj;
+    SpriteRenderer spriteRenderer;
+    const float rotationAmt = 5;
+    
+    
+    //sprite sets, would change based on the user choice if they want
+    List<Sprite[]> spriteSets;
+
+    Sprite[] currentSpriteSet;
     public event EventHandler OnUpdateScore;
     public int Score
     {
@@ -34,13 +44,33 @@ public class BirdBase : MonoBehaviour
         jumpStrength = stats.jumpStrength;
         playerInput = GetComponent<PlayerInput>();
         rigidBody =  GetComponent<Rigidbody2D>();
+        spriteObj = transform.GetChild(0).gameObject;
+        spriteRenderer = spriteObj.GetComponent<SpriteRenderer>();
         global = GameObject.Find("GlobalObject");
+        
+        //spritesets
+        
+        spriteSets = new List<Sprite[]>();
+        spriteSets.Add(stats.spriteSetYellow);
+        currentSpriteSet = spriteSets[0];
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        spriteObj.transform.rotation = Quaternion.Euler(0, 0, rigidBody.linearVelocity.y * rotationAmt);
+        switch (rigidBody.linearVelocity.y)
+        {
+            case > 2:
+                spriteRenderer.sprite = currentSpriteSet[2];
+                break;
+            case < -2:
+                spriteRenderer.sprite = currentSpriteSet[1];
+                break;
+            default:
+                spriteRenderer.sprite = currentSpriteSet[0];
+                break;
+        }
     }
 
     public void OnJump()

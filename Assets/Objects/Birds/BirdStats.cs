@@ -4,4 +4,8 @@ using UnityEngine;
 public class BirdStats : ScriptableObject
 {
     public float jumpStrength;
+    public Sprite[] spriteSetYellow;
+    public Sprite[] spriteSetRed;
+    public Sprite[] spriteSetGreen;
+    public Sprite[] spriteSetBlue;
 }
