@@ -1,0 +1,49 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1762463679",
+        "python_version": "3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\GAT360\\Flappy-Race\\venv310\\Scripts\\mlagents-learn config/flappy_bird_config.yaml --run-id=DemoRun --no-graphics --resume",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "2.9.0+cpu",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1762463695"
+    },
+    "total": 15.977986100013368,
+    "count": 1,
+    "self": 0.007759199943393469,
+    "children": {
+        "run_training.setup": {
+            "total": 0.10480309999547899,
+            "count": 1,
+            "self": 0.10480309999547899
+        },
+        "TrainerController.start_learning": {
+            "total": 15.865423800074495,
+            "count": 1,
+            "self": 9.330012835562229e-05,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 15.793150199926458,
+                    "count": 1,
+                    "self": 15.793150199926458
+                },
+                "TrainerController._save_models": {
+                    "total": 0.07218030001968145,
+                    "count": 1,
+                    "self": 1.8900027498602867e-05,
+                    "children": {
+                        "RLTrainer._checkpoint": {
+                            "total": 0.07216139999218285,
+                            "count": 1,
+                            "self": 0.07216139999218285
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
