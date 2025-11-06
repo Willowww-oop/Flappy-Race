@@ -63,7 +63,7 @@ engine_settings:
   no_graphics: true
 environment_parameters: null
 checkpoint_settings:
-  run_id: DemoRun
+  run_id: DemoRun2
   initialize_from: null
   load_model: false
   resume: true
