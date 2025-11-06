@@ -12,4 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481f61a828fedec4495bb90ad27228e5, type: 3}
   m_Name: BirdStats
   m_EditorClassIdentifier: Assembly-CSharp::BirdStats
-  jumpStrength: 6.68
+  jumpStrength: 3.63
+  spriteSetYellow:
+  - {fileID: 4672514779453497517, guid: 1ab9b66584dfccb4b92700234a1d31e2, type: 3}
+  - {fileID: -2852661201194558424, guid: 4f545abebca63e945ad0c264477b9ac0, type: 3}
+  - {fileID: 6437894598648814375, guid: 5466418f82379514bac9b87b8d14e41b, type: 3}
+  spriteSetRed: []
+  spriteSetGreen: []
+  spriteSetBlue: []
