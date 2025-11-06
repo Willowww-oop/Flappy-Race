@@ -43,4 +43,13 @@ public class AgentBird : Agent
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Pipe"))
+        {
+            AddReward(-1f);
+            EndEpisode();
+        }
+    }
+
 }
