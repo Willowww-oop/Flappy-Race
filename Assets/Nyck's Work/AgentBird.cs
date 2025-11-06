@@ -50,6 +50,11 @@ public class AgentBird : Agent
             AddReward(-1f);
             EndEpisode();
         }
+
+        if (collision.CompareTag("Scorer"))
+        {
+            AddReward(+1f);  
+        }
     }
 
 }
