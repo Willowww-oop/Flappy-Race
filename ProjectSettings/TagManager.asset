@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Scorer
   - Obstacle
+  - Pipes
   layers:
   - Default
   - TransparentFX

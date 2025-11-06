@@ -1,0 +1,68 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1762461224",
+        "python_version": "3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\GAT360\\Flappy-Race\\venv310\\Scripts\\mlagents-learn config/flappy_bird_config.yaml --run-id=test-run3 --no-graphics",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "2.9.0+cpu",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1762461358"
+    },
+    "total": 134.0714278999949,
+    "count": 1,
+    "self": 0.017009400064125657,
+    "children": {
+        "run_training.setup": {
+            "total": 0.09783599991351366,
+            "count": 1,
+            "self": 0.09783599991351366
+        },
+        "TrainerController.start_learning": {
+            "total": 133.95658250001725,
+            "count": 1,
+            "self": 0.0001865999074652791,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 10.769821100053377,
+                    "count": 1,
+                    "self": 10.769821100053377
+                },
+                "TrainerController.advance": {
+                    "total": 123.1313423999818,
+                    "count": 1,
+                    "self": 2.8999987989664078e-05,
+                    "children": {
+                        "env_step": {
+                            "total": 123.13131339999381,
+                            "count": 1,
+                            "self": 123.13129469996784,
+                            "children": {
+                                "SubprocessEnvManager._take_step": {
+                                    "total": 1.8700025975704193e-05,
+                                    "count": 1,
+                                    "self": 1.8700025975704193e-05
+                                }
+                            }
+                        }
+                    }
+                },
+                "TrainerController._save_models": {
+                    "total": 0.05523240007460117,
+                    "count": 1,
+                    "self": 4.370009992271662e-05,
+                    "children": {
+                        "RLTrainer._checkpoint": {
+                            "total": 0.05518869997467846,
+                            "count": 1,
+                            "self": 0.05518869997467846
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

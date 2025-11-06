@@ -5,13 +5,20 @@ using Unity.MLAgents.Sensors;
 public class AgentBird : Agent
 {
     public Rigidbody2D rb;
-    public float flapForce = 5f;
-    public float groundY = 0f;
+    public float flapForce;
+    public float groundY;
+    float flapCooldown = 0.2f;
+    float lastFlapTime;
 
+    private void Update()
+    {
+        float tilt = Mathf.Clamp(rb.linearVelocity.y * 5f, -45f, 45f);
+        transform.rotation = Quaternion.Euler(0, 0, tilt);
+    }
     public override void OnEpisodeBegin()
     {
         rb.linearVelocity = Vector2.zero;
-        transform.position = new Vector2(0,2);
+        transform.position = new Vector2(0,-1);
 
     }
 
@@ -25,9 +32,11 @@ public class AgentBird : Agent
     {
         int flap = actions.DiscreteActions[0];
 
-        if(flap == 1)
+        if(flap == 1 && Time.time - lastFlapTime > flapCooldown)
         {
-            rb.AddForce(Vector2.up * flapForce, ForceMode2D.Impulse);
+            rb.linearVelocityY = 0;
+            rb.AddForce(Vector2.up  * flapForce, ForceMode2D.Impulse);
+            lastFlapTime = Time.time;
         }
 
         if(transform.position.y > groundY)
@@ -45,7 +54,7 @@ public class AgentBird : Agent
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Pipe"))
+        if (collision.CompareTag("Pipes"))
         {
             AddReward(-1f);
             EndEpisode();
