@@ -397,7 +397,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &677167285
+--- !u!1 &1312088030
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -405,10 +405,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 677167287}
-  - component: {fileID: 677167286}
+  - component: {fileID: 1312088032}
+  - component: {fileID: 1312088031}
   m_Layer: 0
-  m_Name: background-day_0 (2)
+  m_Name: SceneManger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -416,6 +416,8 @@ GameObject:
   m_IsActive: 1
 --- !u!212 &677167286
 SpriteRenderer:
+--- !u!114 &1312088031
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -699,6 +701,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1093865815209562245, guid: a4045ca445b2a48479f0f238cc1e1a01, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093865815209562245, guid: a4045ca445b2a48479f0f238cc1e1a01, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 3441597993905499680, guid: a4045ca445b2a48479f0f238cc1e1a01, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388251711062693502, guid: a4045ca445b2a48479f0f238cc1e1a01, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388251711062693502, guid: a4045ca445b2a48479f0f238cc1e1a01, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388251711062693502, guid: a4045ca445b2a48479f0f238cc1e1a01, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5388251711062693502, guid: a4045ca445b2a48479f0f238cc1e1a01, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.013422819
@@ -739,6 +765,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7220672584158240779, guid: a4045ca445b2a48479f0f238cc1e1a01, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2852661201194558424, guid: 4f545abebca63e945ad0c264477b9ac0, type: 3}
     - target: {fileID: 8231904098098690347, guid: a4045ca445b2a48479f0f238cc1e1a01, type: 3}
       propertyPath: m_Name
       value: Bird
